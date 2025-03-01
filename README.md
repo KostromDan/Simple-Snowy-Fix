@@ -1,1 +1,1 @@
-[View Image Comparison](slider/image-comparison.html)
+[View Image Comparison](https://KostromDan.github.io/Simple-Snowy-Fix/slider/image-comparison.html)
