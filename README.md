@@ -1,1 +1,1 @@
-[View Image Comparison](https://KostromDan.github.io/Simple-Snowy-Fix/slider/image-comparison.html)
+<iframe src="https://KostromDan.github.io/Simple-Snowy-Fix/slider/image-comparison.html" width="100%" height="500" frameborder="0"></iframe>
