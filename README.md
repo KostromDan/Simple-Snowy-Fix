@@ -1,1 +1,1 @@
-<iframe src="https://KostromDan.github.io/Simple-Snowy-Fixer/slider/image-comparison.html" width="100%" height="500" frameborder="0"></iframe>
+![](https://KostromDan.github.io/Simple-Snowy-Fixer/slider/html_workaround.svg)
