@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'simple-snowy-fix'
+rootProject.name = 'simple_snowy_fix'
 
 include 'common'
 include 'fabric'

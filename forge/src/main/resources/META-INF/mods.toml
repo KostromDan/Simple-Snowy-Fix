@@ -1,26 +1,26 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "GNU LGPLv3"
 
 [[mods]]
-modId = "simple-snowy-fix"
+modId = "simple_snowy_fix"
 version = "${version}"
 displayName = "Simple Snowy Fix"
-authors = "Me!"
+authors = "KostromDan, Apollo"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Fixes incorrect snow generation on tree leaves MC-119599
 '''
-#logoFile = ""
+logoFile = "assets/simple_snowy_fix/icon.png"
 
-[[dependencies.simple-snowy-fix]]
+[[dependencies.simple_snowy_fix]]
 modId = "forge"
 mandatory = true
 versionRange = "[47,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.simple-snowy-fix]]
+[[dependencies.simple_snowy_fix]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1,)"

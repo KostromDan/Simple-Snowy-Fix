@@ -79,3 +79,16 @@ subprojects {
         }
     }
 }
+
+task collectJars(type: Copy) {
+    def deps = [
+            ':fabric',
+            ':forge'
+    ].collect { path -> project(path).tasks.remapJar }
+    dependsOn deps
+    from deps
+
+    into 'build/libs'
+}
+
+assemble.dependsOn collectJars

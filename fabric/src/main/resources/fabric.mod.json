@@ -1,29 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "simple-snowy-fix",
+  "id": "simple_snowy_fix",
   "version": "${version}",
   "name": "Simple Snowy Fix",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Fixes incorrect snow generation on tree leaves MC-119599",
   "authors": [
-    "Me!"
+    "KostromDan",
+    "Apollo"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/KostromDan/Simple-Snowy-Fix",
+    "sources": "https://github.com/KostromDan/Simple-Snowy-Fix"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/simple-snowy-fix/icon.png",
+  "license": "GNU LGPLv3",
+  "icon": "assets/simple_snowy_fix/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.fabric.ExampleModFabric"
+      "dev.kostromdan.mods.simple_snowy_fix.fabric.SimpleSnowyFixModFabric"
     ],
     "client": [
-      "com.example.fabric.client.ExampleModFabricClient"
+      "dev.kostromdan.mods.simple_snowy_fix.fabric.client.SimpleSnowyFixModFabricClient"
     ]
   },
   "mixins": [
-    "simple-snowy-fix.mixins.json"
+    "simple_snowy_fix.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.16.10",
