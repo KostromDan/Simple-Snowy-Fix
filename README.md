@@ -1,1 +1,1 @@
-![](https://KostromDan.github.io/Simple-Snowy-Fixer/slider/slider.gif)
+![](https://KostromDan.github.io/Simple-Snowy-Fix/slider/slider.gif)
