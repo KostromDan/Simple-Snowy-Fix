@@ -1,4 +1,4 @@
-package dev.kostromdan.mods.simple_snowy_fix.forge.mixin;
+package dev.kostromdan.mods.simple_snowy_fix.neoforge.mixin;
 
 import dev.kostromdan.mods.simple_snowy_fix.SimpleSnowyFixMod;
 import net.minecraft.core.BlockPos;

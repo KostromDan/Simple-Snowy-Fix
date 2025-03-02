@@ -29,3 +29,6 @@ side = "BOTH"
 
 [[mixins]]
 config = "simple_snowy_fix.mixins.json"
+
+[[mixins]]
+config = "simple_snowy_fix-neoforge.mixins.json"
