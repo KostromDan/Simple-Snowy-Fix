@@ -82,7 +82,7 @@ subprojects {
 
 task collectJars(type: Copy) {
     def deps = [
-            ':fabric',
+//            ':fabric',
             ':neoforge'
     ].collect { path -> project(path).tasks.remapJar }
     dependsOn deps
