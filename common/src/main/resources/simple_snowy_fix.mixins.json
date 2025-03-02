@@ -6,7 +6,6 @@
   "client": [
   ],
   "mixins": [
-    "RUTreeFeatureMixin",
     "TreeFeatureMixin",
     "TreeFromStructureNBTFeatureMixin"
   ],

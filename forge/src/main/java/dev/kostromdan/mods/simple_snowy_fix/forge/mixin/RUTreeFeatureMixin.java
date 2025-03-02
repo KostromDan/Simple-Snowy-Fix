@@ -1,13 +1,11 @@
-package dev.kostromdan.mods.simple_snowy_fix.mixin;
+package dev.kostromdan.mods.simple_snowy_fix.forge.mixin;
 
 import dev.kostromdan.mods.simple_snowy_fix.SimpleSnowyFixMod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelAccessor;
 import net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration;
-import net.regions_unexplored.world.level.feature.tree.LarchTreeFeature;
-import net.regions_unexplored.world.level.feature.tree.MapleTreeFeature;
-import net.regions_unexplored.world.level.feature.tree.StrippedPineTreeFeature;
+import net.regions_unexplored.world.level.feature.tree.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,6 +13,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 
 @Mixin({
+        AshenTreeFeature.class,
+        AspenTreeFeature.class,
+        CypressTreeFeature.class,
+        DeadTreeFeature.class,
+        GiantCypressTreeFeature.class,
+        KapokTreeFeature.class,
+        LushPineTreeFeature.class,
+        PineTreeFeature.class,
+        SmallOakTreeFeature.class,
+        TreeShrubFeature.class,
         StrippedPineTreeFeature.class,
         LarchTreeFeature.class,
         MapleTreeFeature.class

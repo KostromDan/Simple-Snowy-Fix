@@ -37,6 +37,8 @@ dependencies {
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
+
+    modImplementation "curse.maven:regions-unexplored-659110:5558225"
 }
 
 processResources {
