@@ -10,16 +10,31 @@
 This mod is a multiloader port of [Simple Snowy Fix (fabric)](https://github.com/Apollounknowndev/simple-snowy-fix) by [Apollo](https://github.com/Apollounknowndev).
 
 Despite the original mod, doesn't include the snow under trees feature, since it is implemented well in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
-which has fixed many compatibility issues. There is no reason to duplicate its function. 
+which has fixed many compatibility issues. There is no reason to duplicate its function. Also fixed compatibility with many mods.
 
 ## Features
 
 In vanilla snow quite common won't generate on the leaves of trees.
 It's because of a Vanilla bug [MC-119599](https://bugs.mojang.com/browse/MC/issues/MC-119599),
 If tree leaves are in a chunk generated before the chunk containing the tree’s trunk, snow won’t cover those leaves because the snow was placed before the leaves were added.
-This very simple mod fixes this issue. No dependencies, no config, just drop it in and it works.
+This very simple mod fixes this issue. No dependencies, just drop it in and it works.
 
-It works out of the box with worldgen mods that add new snowy biomes as well.
+## Configuration
+
+By default, it just fixes the bug.
+However, if you want snow to also generate on leaves under other leaves, you can enable this feature in the mod config (If you want snow biomes to look snowier).
+
+## Compatibility
+
+It should work out of the box with most worldgen mods that add new snowy biomes.
+
+Tested:
+- Biomes O' Plenty
+- Regions Unexplored
+- Oh The Biomes We've Gone (and all other mods using Oh The Trees You'll Grow)
+
+If a mod implements `TreeFeature` in some cursed way, it might require a patch. Feel free to open an issue.
+It won't create problems. If there is some compatibility issue, the fix just won't apply to those biomes.
 
 ## Improve your Snow Generation
 

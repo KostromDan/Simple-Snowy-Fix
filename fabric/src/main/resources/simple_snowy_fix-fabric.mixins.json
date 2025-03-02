@@ -1,13 +1,12 @@
 {
   "required": true,
-  "package": "dev.kostromdan.mods.simple_snowy_fix.mixin",
+  "package": "dev.kostromdan.mods.simple_snowy_fix.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
   ],
   "mixins": [
-    "TreeFeatureMixin",
-    "TreeFromStructureNBTFeatureMixin"
+    "RUTreeFeatureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
