@@ -6,6 +6,7 @@
     <a href="https://modrinth.com/mod/simple-snowy-fix-(forge-fabric)"><img src="https://img.shields.io/modrinth/dt/3WP3HZRG?logo=modrinth&label=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth"></a>
     <br><br>
 </h1>
+
 This mod is a multiloader port of [Simple Snowy Fix (fabric)](https://github.com/Apollounknowndev/simple-snowy-fix) by [Apollo](https://github.com/Apollounknowndev).
 
 Despite the original mod, doesn't include the snow under trees feature, since it is implemented well in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
