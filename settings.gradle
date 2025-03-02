@@ -11,4 +11,4 @@ rootProject.name = 'simple_snowy_fix'
 
 include 'common'
 include 'fabric'
-include 'forge'
+include 'neoforge'

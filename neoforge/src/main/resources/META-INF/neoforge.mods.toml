@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[43,)"
+loaderVersion = "[4,)"
 #issueTrackerURL = ""
 license = "GNU LGPLv3"
 
@@ -14,15 +14,18 @@ Fixes incorrect snow generation on tree leaves MC-119599
 logoFile = "assets/simple_snowy_fix/icon.png"
 
 [[dependencies.simple_snowy_fix]]
-modId = "forge"
-mandatory = true
-versionRange = "[43,)"
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.simple_snowy_fix]]
 modId = "minecraft"
-mandatory = true
-versionRange = "[1.19,)"
+type = "required"
+versionRange = "[1.21.1,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[mixins]]
+config = "simple_snowy_fix.mixins.json"
