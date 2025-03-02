@@ -16,8 +16,7 @@ which has fixed many compatibility issues. There is no reason to duplicate its f
 
 In vanilla snow quite common won't generate on the leaves of trees.
 It's because of a Vanilla bug [MC-119599](https://bugs.mojang.com/browse/MC/issues/MC-119599),
-If the main part of the tree is in one chunk, but some leaves are in another, snow won't generate on them.
-
+If tree leaves are in a chunk generated before the chunk containing the tree’s trunk, snow won’t cover those leaves because the snow was placed before the leaves were added.
 This very simple mod fixes this issue. No dependencies, no config, just drop it in and it works.
 
 It works out of the box with worldgen mods that add new snowy biomes as well.
