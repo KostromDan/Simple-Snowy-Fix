@@ -1,4 +1,4 @@
-#  
+#   
 
 <h1 align="center">Simple Snowy Fix  <br>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/simple-snowy-fix-forge-fabric/files"><img src="https://cf.way2muchnoise.eu/versions/1211256(c70039).svg" alt="Supported Versions"></a>
@@ -36,6 +36,12 @@ This very simple mod fixes this issue. No dependencies, just drop it in and it w
 By default, it just fixes the bug.
 However, if you want snow to also generate on leaves under other leaves,
 you can enable this feature in the mod config (If you want snow biomes to look snowier).
+
+<details>
+  <summary>Demo:</summary>
+  <img src="https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla_leaves.gif" alt="Vanilla Leaves">
+  <img src="https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG_leaves.gif" alt="BYWG Leaves">
+</details>
 
 ## Compatibility
 
