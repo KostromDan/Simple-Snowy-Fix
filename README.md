@@ -28,6 +28,7 @@ It's because of a Vanilla bug, [MC-119599](https://bugs.mojang.com/browse/MC/iss
 When terrain is generated chunk by chunk, snow is placed in a chunk before trees are added in neighboring chunks.
 If a tree’s leaves from a chunk generated later extend into a chunk generated earlier,
 the snow in the earlier chunk ends up under those leaves because it was already placed before the leaves appeared.
+
 This very simple mod fixes this issue. No dependencies, just drop it in and it works.
 
 ## Configuration
