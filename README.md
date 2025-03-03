@@ -9,17 +9,23 @@
 
 This mod is a multiloader port of [Simple Snowy Fix (fabric)](https://github.com/Apollounknowndev/simple-snowy-fix) by [Apollo](https://github.com/Apollounknowndev).
 
-Despite the original mod, doesn't include the snow under trees feature, since it is implemented well in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
-which has fixed many compatibility issues. There is no reason to duplicate its function. Also fixed compatibility with many mods.
+Differences with original mod:
+- Added compatibility with many mods.
+- Just fixes bug by default. Original mod was generating snow on leaves under leaves. We have config option for this, not enabled by default.
+- Doesn't include the snow under trees feature, since it is implemented well in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
+  which has fixed many problems and compatibility issues. There is no reason to duplicate its function.
 
 ## Features
 
-In vanilla, snow quite often won't generate on the leaves of trees. All snowy biomes from all world generation mods are
-also affected. This looks especially bad on big, voluminous trees from mods.  
-It's because of a Vanilla bug, [MC-119599](https://bugs.mojang.com/browse/MC/issues/MC-119599).  
-If tree leaves are in a chunk generated before the chunk containing the tree’s trunk, snow won’t cover those leaves
-because the snow was placed before the leaves were added.  
+In Minecraft 1.12 and later, snow often doesn't fully cover tree leaves in snowy biomes,
+including modded ones, making large modded trees look especially bad.
+
+It's because of a Vanilla bug, [MC-119599](https://bugs.mojang.com/browse/MC/issues/MC-119599).
+When terrain is generated chunk by chunk, snow is placed in a chunk before trees are added in neighboring chunks.
+If a tree’s leaves from a chunk generated later extend into a chunk generated earlier,
+the snow in the earlier chunk ends up under those leaves because it was already placed before the leaves appeared.
 This very simple mod fixes this issue. No dependencies, just drop it in and it works.
+
 
 ## Configuration
 
@@ -43,8 +49,13 @@ It won't create problems. If there is some compatibility issue, the fix just won
 If you want a more perfect snow experience, I suggest also using these mods:
 
 * [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) to let snow generate under trees.
-* [Snow! Real Magic! ⛄](https://github.com/Snownee/SnowRealMagic) to let grass, flowers, etc generate with snow.
+* [Snow! Real Magic! ⛄](https://github.com/Snownee/SnowRealMagic) to let grass, flowers, etc. generate with snow.
 
 ## Demo:
 
-![](https://KostromDan.github.io/Simple-Snowy-Fix/slider/slider.gif)
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla.gif))
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla_map.gif))
+
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG.gif))
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG_map.gif))
+
