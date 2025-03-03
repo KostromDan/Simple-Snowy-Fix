@@ -1,4 +1,5 @@
-# 
+#  
+
 <h1 align="center">Simple Snowy Fix  <br>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/simple-snowy-fix-forge-fabric/files"><img src="https://cf.way2muchnoise.eu/versions/1211256(c70039).svg" alt="Supported Versions"></a>
 	<a href="https://github.com/KostromDan/Simple-Snowy-Fix/blob/main/LICENSE"><img src="https://img.shields.io/github/license/KostromDan/Crash-Assistant?style=flat&color=900c3f" alt="License"></a>
@@ -10,15 +11,18 @@
 This mod is a multiloader port of [Simple Snowy Fix (fabric)](https://github.com/Apollounknowndev/simple-snowy-fix) by [Apollo](https://github.com/Apollounknowndev).
 
 Differences with original mod:
+
 - Added compatibility with many mods.
-- Just fixes bug by default. Original mod was generating snow on leaves under leaves. We have config option for this, not enabled by default.
-- Doesn't include the snow under trees feature, since it is implemented well in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
+- Just fixes bug by default. Original mod was generating snow on leaves under leaves. We have config option for this,
+  not enabled by default.
+- Doesn't include the snow under trees feature, since it is implemented well
+  in [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) mod,
   which has fixed many problems and compatibility issues. There is no reason to duplicate its function.
 
 ## Features
 
-In Minecraft 1.12 and later, snow often doesn't fully cover tree leaves in snowy biomes,
-including modded ones, making large modded trees look especially bad.
+In Minecraft 1.12 and later, snow often doesn’t fully cover tree leaves in snowy biomes,
+including modded ones, making trees look bad—especially large modded ones.
 
 It's because of a Vanilla bug, [MC-119599](https://bugs.mojang.com/browse/MC/issues/MC-119599).
 When terrain is generated chunk by chunk, snow is placed in a chunk before trees are added in neighboring chunks.
@@ -26,17 +30,18 @@ If a tree’s leaves from a chunk generated later extend into a chunk generated 
 the snow in the earlier chunk ends up under those leaves because it was already placed before the leaves appeared.
 This very simple mod fixes this issue. No dependencies, just drop it in and it works.
 
-
 ## Configuration
 
 By default, it just fixes the bug.
-However, if you want snow to also generate on leaves under other leaves, you can enable this feature in the mod config (If you want snow biomes to look snowier).
+However, if you want snow to also generate on leaves under other leaves,
+you can enable this feature in the mod config (If you want snow biomes to look snowier).
 
 ## Compatibility
 
 It should work out of the box with most worldgen mods that add new snowy biomes.
 
 Tested:
+
 - Biomes O' Plenty
 - Regions Unexplored
 - Oh The Biomes We've Gone (and all other mods using Oh The Trees You'll Grow)
