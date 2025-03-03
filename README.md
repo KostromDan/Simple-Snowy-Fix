@@ -65,9 +65,9 @@ If you want a more perfect snow experience, I suggest also using these mods:
 
 ## Demo:
 
-![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla.gif))
-![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla_map.gif))
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla.gif)
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/vanilla_map.gif)
 
-![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG.gif))
-![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG_map.gif))
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG.gif)
+![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG_map.gif)
 
