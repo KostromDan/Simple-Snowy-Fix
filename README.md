@@ -71,3 +71,4 @@ If you want a more perfect snow experience, I suggest also using these mods:
 ![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG.gif)
 ![](https://KostromDan.github.io/Simple-Snowy-Fix/demo_images/BYWG_map.gif)
 
+Note: Screenshots were taken with the [Snow Under Trees](https://github.com/bl4ckscor3/SnowUnderTrees) and [Snow! Real Magic! ⛄](https://github.com/Snownee/SnowRealMagic) mods installed.
