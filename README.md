@@ -13,6 +13,7 @@ This mod is a multiloader port of [Simple Snowy Fix (fabric)](https://github.com
 Differences with original mod:
 
 - Added compatibility with many mods.
+- Fixed many issues, like snow was generating on manually grown trees from saplings.
 - Just fixes bug by default. Original mod was generating snow on leaves under leaves. We have config option for this,
   not enabled by default.
 - Doesn't include the snow under trees feature, since it is implemented well
@@ -53,8 +54,13 @@ Tested:
 - Regions Unexplored
 - Oh The Biomes We've Gone (and all other mods using Oh The Trees You'll Grow)
 
-If a mod implements `TreeFeature` in some cursed way, it might require a patch. Feel free to open an issue.
+If a mod implements trees in some cursed way, it might require a patch. Feel free to open an issue.
 It won't create problems. If there is some compatibility issue, the fix just won't apply to those biomes.
+
+## Performance
+
+Very well, you will notice no difference. It takes less than an additional 100ms (0.1s) to generate a 32-chunk radius
+of snowy biome with a lot of leaves. This was profiled directly from the code, ensuring 100% accuracy.
 
 ## Improve your Snow Generation
 
