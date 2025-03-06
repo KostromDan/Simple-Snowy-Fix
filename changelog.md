@@ -1,3 +1,7 @@
+2.1.1:
+
+- Fixed snow was generating on manually grown trees from saplings.
+
 2.1.0:
 
 - Added compatibility with mods:
