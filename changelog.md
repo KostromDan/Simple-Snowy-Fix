@@ -1,3 +1,7 @@
+2.1.2:
+
+- Fixed compat with new version of Oh The Trees You'll Grow.
+
 2.1.1:
 
 - Fixed snow was generating on manually grown trees from saplings.
