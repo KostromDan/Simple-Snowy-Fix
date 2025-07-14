@@ -3,11 +3,10 @@
   "package": "dev.kostromdan.mods.simple_snowy_fix.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
+  "plugin": "dev.kostromdan.mods.simple_snowy_fix.mixin.SimpleSnowyFixCommonMixinPlugin",
   "client": [
   ],
   "mixins": [
-    "TreeFeatureMixin",
-    "TreeFromStructureNBTFeatureMixin"
   ],
   "injectors": {
     "defaultRequire": 1
