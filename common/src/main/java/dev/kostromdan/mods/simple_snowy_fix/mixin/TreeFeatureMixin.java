@@ -29,7 +29,7 @@ public class TreeFeatureMixin {
     )
     private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, Random random, BlockPos origin, TreeConfiguration config, Set<BlockPos> trunkSet, Set<BlockPos> foliageSet, Set<BlockPos> decoratorSet) {
         for (BlockPos leafPos : foliageSet) {
-            SimpleSnowyFixMod.placeSnowOnLeaves(level, leafPos);
+            SimpleSnowyFixMod.placeSnowOnLeaves(level, leafPos, false);
         }
     }
 }
