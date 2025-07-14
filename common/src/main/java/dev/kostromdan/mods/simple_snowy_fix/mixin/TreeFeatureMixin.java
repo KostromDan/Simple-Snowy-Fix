@@ -2,7 +2,6 @@ package dev.kostromdan.mods.simple_snowy_fix.mixin;
 
 import dev.kostromdan.mods.simple_snowy_fix.SimpleSnowyFixMod;
 import net.minecraft.core.BlockPos;
-import java.util.Random;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
@@ -14,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+import java.util.Random;
 import java.util.Set;
 
 @Mixin(TreeFeature.class)
@@ -27,9 +27,9 @@ public class TreeFeatureMixin {
                     shift = Shift.BEFORE
             )
     )
-    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel worldGenLevel, Random random, BlockPos blockPos, TreeConfiguration treeConfiguration, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3) {
-        for (BlockPos leafPos : set3) {
-            SimpleSnowyFixMod.placeSnowOnLeaves(worldGenLevel, leafPos);
+    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, Random random, BlockPos origin, TreeConfiguration config, Set<BlockPos> trunkSet, Set<BlockPos> foliageSet, Set<BlockPos> decoratorSet) {
+        for (BlockPos leafPos : foliageSet) {
+            SimpleSnowyFixMod.placeSnowOnLeaves(level, leafPos);
         }
     }
 }
