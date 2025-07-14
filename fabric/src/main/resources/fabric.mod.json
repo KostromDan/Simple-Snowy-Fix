@@ -24,14 +24,13 @@
     ]
   },
   "mixins": [
-    "simple_snowy_fix.mixins.json",
-    "simple_snowy_fix-fabric.mixins.json"
+    "simple_snowy_fix.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.16.10",
-    "minecraft": ">=1.19",
+    "minecraft": ">=1.18 <1.19",
     "java": ">=17",
-    "fabric-api": "*"
+    "fabric": "*"
   },
   "suggests": {
     "another-mod": "*"

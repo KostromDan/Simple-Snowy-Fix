@@ -38,8 +38,8 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
-    modImplementation "curse.maven:regions-unexplored-659110:5558225"
-    modImplementation "curse.maven:dynamictrees-252818:6655713"
+    modImplementation "curse.maven:regions-unexplored-659110:4554212"
+    modImplementation "curse.maven:dynamictrees-252818:4674900"
 }
 
 processResources {
@@ -61,7 +61,7 @@ remapJar {
 
 unifiedPublishing {
     project {
-        gameVersions = ["1.19.2", "1.19.3", "1.19.4", "1.20.1"]
+        gameVersions = ["1.18.2"]
         gameLoaders = ["forge", "neoforge"]
 
         displayName = tasks.remapJar.archiveFile.get().asFile.name

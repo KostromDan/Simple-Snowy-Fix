@@ -19,7 +19,7 @@ public class JoCodeMixin {
             at = @At("TAIL"),
             remap = false
     )
-    private void additionalSnowOnLeaves(SimpleVoxmap leafMap, LevelAccessor level, BlockPos rootPos, Holder<Biome> biome, CallbackInfo ci) {
+    private void additionalSnowOnLeaves(SimpleVoxmap leafMap, LevelAccessor level, BlockPos rootPos, Biome biome, CallbackInfo ci) {
         for (SimpleVoxmap.Cell cell : leafMap.getAllNonZeroCells((byte) 0x0F)) {
             BlockPos cellPos = cell.getPos();
             SimpleSnowyFixMod.placeSnowOnLeaves(level, cellPos);
