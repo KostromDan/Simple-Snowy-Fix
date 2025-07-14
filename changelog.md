@@ -1,3 +1,9 @@
+2.1.4:
+
+- 1.21.6, 1.21.7 marked as compatible.
+- Added dynamic trees mod compat.
+- Using `IMixinConfigPlugin` to prevent warnings by compatibility mixins.
+
 2.1.3:
 
 - 1.21.5
