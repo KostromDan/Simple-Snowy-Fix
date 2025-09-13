@@ -2,7 +2,7 @@
 
 <h1 align="center">Simple Snowy Fix  <br>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/simple-snowy-fix-forge-fabric/files"><img src="https://cf.way2muchnoise.eu/versions/1211256(c70039).svg" alt="Supported Versions"></a>
-	<a href="https://github.com/KostromDan/Simple-Snowy-Fix/blob/main/LICENSE"><img src="https://img.shields.io/github/license/KostromDan/Crash-Assistant?style=flat&color=900c3f" alt="License"></a>
+	<a href="https://github.com/KostromDan/Simple-Snowy-Fix/blob/main/LICENSE"><img src="https://img.shields.io/github/license/KostromDan/Simple-Snowy-Fix?style=flat&color=900c3f" alt="License"></a>
 	<a href="https://www.curseforge.com/minecraft/mc-mods/simple-snowy-fix-forge-fabric"><img src="http://cf.way2muchnoise.eu/1211256.svg" alt="CF"></a>
     <a href="https://modrinth.com/mod/simple-snowy-fix-(forge-fabric)"><img src="https://img.shields.io/modrinth/dt/3WP3HZRG?logo=modrinth&label=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth"></a>
     <br><br>
