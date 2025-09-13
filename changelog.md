@@ -1,3 +1,7 @@
+2.1.6:
+
+- 1.18.2 fixed crash with Regions Unexplored due to a stupid mistake during backporting.
+
 2.1.5:
 
 - 1.18.2 backport.
