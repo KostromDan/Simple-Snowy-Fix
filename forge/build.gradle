@@ -39,6 +39,7 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')
 
     modImplementation "curse.maven:dynamictrees-252818:4674900"
+    modImplementation "curse.maven:regions-unexplored-659110:4554212"
 }
 
 processResources {
