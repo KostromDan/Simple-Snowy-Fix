@@ -20,14 +20,18 @@ allprojects {
     version = rootProject.mod_version
 }
 
-subprojects {
+subprojects { subproject ->
     apply plugin: 'dev.architectury.loom'
     apply plugin: 'architectury-plugin'
     apply plugin: 'maven-publish'
 
     base {
-        // Set up a suffixed format for the mod jar names, e.g. `example-fabric`.
-        archivesName = "$rootProject.archives_name-$project.name"
+        if (subproject.name in ['forge']) {
+            archivesName = "simple_snowy_fix-forge-1.19-1.20.1"
+        } else {
+            archivesName = "simple_snowy_fix-$project.name-1.19-1.21"
+        }
+        archives_name = archivesName
     }
 
     repositories {
