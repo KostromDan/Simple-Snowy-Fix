@@ -4,10 +4,9 @@ plugins {
 }
 
 group 'dev.kostromdan.mods.simple_snowy_fix'
-version '2.1.5'
 
 base {
-    archivesName = "simple_snowy_fix"
+    archivesName = "simple_snowy_fix-1.21.1-1.21.10"
 }
 
 java {
