@@ -1,3 +1,9 @@
+2.1.5:
+
+- Added MinecraftForge support for 1.21.1+.
+- Marked 1.21.8 - 1.21.10 as compatible.
+- Fixed Regions Unexplored compatibility on fabric 1.21.1.
+
 2.1.4:
 
 - 1.21.6, 1.21.7 marked as compatible.
