@@ -1,3 +1,7 @@
+2.1.8:
+
+- Forgot to mark 1.21.11 as compatible.
+
 2.1.7:
 
 - Marked 1.21.11 as compatible.
