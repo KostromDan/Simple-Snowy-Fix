@@ -1,3 +1,8 @@
+2.1.7:
+
+- Marked 1.21.11 as compatible.
+- Fixed crash in case of datapacks generating super large trees.
+
 2.1.5:
 
 - Added MinecraftForge support for 1.21.1+.
