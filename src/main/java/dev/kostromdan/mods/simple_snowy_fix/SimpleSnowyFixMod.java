@@ -1,6 +1,7 @@
 package dev.kostromdan.mods.simple_snowy_fix;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.SectionPos;
 import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
@@ -18,6 +19,13 @@ public final class SimpleSnowyFixMod {
 
     public static void placeSnowOnLeaves(LevelAccessor level, BlockPos leafPos) {
         BlockPos snowPos = leafPos.above();
+
+        // Check if the chunk containing snowPos is actually loaded/generating in this context.
+        // Fixes crashes if some datapacks with large trees are placing leaves 2 chunks away from loaded chunks.
+        if (!level.hasChunk(SectionPos.blockToSectionCoord(snowPos.getX()), SectionPos.blockToSectionCoord(snowPos.getZ()))) {
+            return;
+        }
+
         if (level instanceof WorldGenRegion &&
                 (config.getPlaceSnowOnLeavesUnderLeaves() || level.getHeight(Heightmap.Types.MOTION_BLOCKING, snowPos.getX(), snowPos.getZ()) == snowPos.getY()) &&
                 level.isEmptyBlock(snowPos) &&
