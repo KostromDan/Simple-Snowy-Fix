@@ -23,16 +23,7 @@ public final class SimpleSnowyFixMod {
                 level.isEmptyBlock(snowPos) &&
                 !level.isEmptyBlock(leafPos) &&
                 level.getBiome(snowPos).value().shouldSnow(level, snowPos)) {
-
-            Holder<Biome> biomeHolder = level.getUncachedNoiseBiome(
-                    snowPos.getX() >> 2,
-                    snowPos.getY() >> 2,
-                    snowPos.getZ() >> 2
-            );
-
-            if (biomeHolder.value().shouldSnow(level, snowPos)) {
-                level.setBlock(snowPos, Blocks.SNOW.defaultBlockState(), 19);
-            }
+            level.setBlock(snowPos, Blocks.SNOW.defaultBlockState(), 19);
         }
     }
 }
