@@ -1,3 +1,7 @@
+2.1.9:
+
+- Fixed crash in case of datapacks generating super large trees and Serene Seasons involved.
+
 2.1.8:
 
 - Forgot to mark 1.21.11 as compatible.
