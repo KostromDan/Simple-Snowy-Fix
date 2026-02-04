@@ -27,9 +27,9 @@ public class TreeFeatureMixin {
                     shift = Shift.BEFORE
             )
     )
-    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, RandomSource random, BlockPos blockPos, TreeConfiguration treeFeatureConfig, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3, Set<BlockPos> set4) {
+    private void snowOnLeaves(FeaturePlaceContext<TreeConfiguration> context, CallbackInfoReturnable<Boolean> cir, WorldGenLevel level, RandomSource random, BlockPos origin, TreeConfiguration treeFeatureConfig, Set<BlockPos> set, Set<BlockPos> set2, Set<BlockPos> set3, Set<BlockPos> set4) {
         for (BlockPos leafPos : set3) {
-            SimpleSnowyFixMod.placeSnowOnLeaves(level, leafPos);
+            SimpleSnowyFixMod.placeSnowOnLeaves(level, leafPos, origin);
         }
     }
 }
