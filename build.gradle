@@ -1,160 +1,83 @@
 plugins {
-    id 'java'
-    id "me.shedaniel.unified-publishing" version "0.1.+"
-    id 'xyz.wagyourtail.unimined' version '1.4.1'
+	id 'net.fabricmc.fabric-loom' version "${loom_version}" apply false
+	id 'net.neoforged.moddev' version '2.0.140' apply false
+	id 'net.minecraftforge.gradle' version '[7.0.17,8)' apply false
+	id "com.modrinth.minotaur" version "2.+" apply false
+	id "net.darkhax.curseforgegradle" version "1.1.+" apply false
 }
 
-group 'dev.kostromdan.mods.simple_snowy_fix'
+apply plugin: 'idea'
 
-base {
-    archivesName = "simple_snowy_fix-1.21.1-1.21.11"
+allprojects {
+	apply plugin: 'java-library'
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+jar.enabled = false
 
-    withSourcesJar()
+subprojects {
+	version = project.version
+	group = project.maven_group
+
+	base {
+		archivesName = project.archives_base_name
+	}
+
+	repositories {
+	}
+
+	tasks.withType(JavaCompile).configureEach {
+		it.options.release = 25
+	}
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_25
+		targetCompatibility = JavaVersion.VERSION_25
+	}
 }
 
-sourceSets {
-    fabric
-    neoforge
-    lexforge
+task collectJars(type: Copy) {
+	dependsOn(
+		":fabric:build",
+		":neoforge:build",
+		":forge:build",
+	)
+
+	from("fabric/build/libs") {
+		include '*.jar'
+	}
+	from("neoforge/build/libs") {
+		include '*.jar'
+	}
+	from("forge/build/libs") {
+		include '*.jar'
+	}
+
+	into("$rootDir/build/libs")
 }
 
-repositories {
-    unimined.neoForgedMaven()
-    unimined.minecraftForgeMaven()
-    unimined.spongeMaven()
-    unimined.wagYourMaven("releases")
-    unimined.modrinthMaven()
-    unimined.curseMaven(false)
+build.finalizedBy(collectJars)
+
+task publishUnified {
+	group = "upload"
+	dependsOn(
+			":fabric:publishUnified",
+			":neoforge:publishUnified",
+			":forge:publishUnified"
+	)
 }
 
-unimined.minecraft {
-    version project.minecraft_version
-
-    mappings {
-        mojmap()
-    }
-
-    defaultRemapJar = false
+task publishUnifiedToLocal {
+	group = "upload"
+	dependsOn(
+			":fabric:publishUnifiedToLocal",
+			":neoforge:publishUnifiedToLocal",
+			":forge:publishUnifiedToLocal"
+	)
 }
 
-unimined.minecraft(sourceSets.fabric) {
-    combineWith(sourceSets.main)
-
-    fabric {
-        loader project.fabric_version
-    }
-
-    defaultRemapJar = true
-}
-
-unimined.minecraft(sourceSets.neoforge) {
-    combineWith(sourceSets.main)
-
-    neoForge {
-        loader project.neoforge_version
-    }
-
-    minecraftRemapper.config {
-        // neoforge adds 1 conflict, where 2 interfaces have a method with the same name on yarn/mojmap,
-        // but the method has different names in the intermediary mappings.
-        // this is a conflict because they have a class that extends both interfaces.
-        // this shouldn't be a problem as long as named mappings don't make the name of those 2 methods different.
-        ignoreConflicts(true)
-    }
-
-    defaultRemapJar = true
-}
-
-unimined.minecraft(sourceSets.lexforge) {
-    combineWith(sourceSets.main)
-
-    minecraftForge {
-        loader project.lexforge_version
-        mixinConfig "simple_snowy_fix-forge.mixins.json"
-    }
-
-    minecraftRemapper.config {
-        ignoreConflicts(true)
-    }
-
-    defaultRemapJar = true
-}
-
-configurations {
-    mainImplementation
-}
-
-
-dependencies {
-    // we need this in main where it isn't by default
-    implementation "org.spongepowered:mixin:0.8.5-SNAPSHOT"
-    implementation "org.ow2.asm:asm-tree:9.8"
-    modImplementation "curse.maven:oh-the-trees-youll-grow-962544:6294236"
-    modImplementation "curse.maven:regions-unexplored-659110:6273884"
-
-    neoforgeCompileOnly "curse.maven:dynamictrees-252818:6611182"
-}
-
-jar {
-    enabled = false
-}
-
-processFabricResources {
-    inputs.property "version", project.version
-
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version
-    }
-}
-
-processNeoforgeResources {
-    inputs.property "version", project.version
-
-    filesMatching("META-INF/neoforge.mods.toml") {
-        expand "version": project.version
-    }
-}
-
-processLexforgeResources {
-    inputs.property "version", project.version
-
-    filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
-    }
-}
-
-unifiedPublishing {
-    project {
-        gameVersions = ["1.21.1", "1.21.2", "1.21.3", "1.21.4", "1.21.5", "1.21.6", "1.21.7", "1.21.8", "1.21.9", "1.21.10", "1.21.11"]
-        gameLoaders = ["fabric", "quilt"]
-
-        displayName = tasks.remapFabricJar.archiveFile.get().asFile.name
-        version = rootProject.version
-        changelog = file('changelog.md').text
-        releaseType = "release"
-
-        mainPublication tasks.remapFabricJar
-
-        var cfToken = System.getenv("CF_TOKEN")
-        if (cfToken != null) {
-            curseforge {
-                token = cfToken
-                id = "1211256"
-            }
-        }
-
-        var mrToken = System.getenv("MODRINTH_TOKEN")
-        if (mrToken != null) {
-            modrinth {
-                token = mrToken
-                id = "3WP3HZRG"
-            }
-        }
-    }
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
 }

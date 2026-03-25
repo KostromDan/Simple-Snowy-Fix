@@ -11,7 +11,8 @@ out
 *.ipr
 *.iws
 *.iml
-.idea
+.idea/*
+!.idea/scopes
 
 # gradle
 build
@@ -20,9 +21,19 @@ build
 # other
 eclipse
 run
+runs
 
-local
-*.architectury-transformer
+/local/
 /config/
 /logs/
+/mods/
+/mods - copy/
+/saves/
+/mod_data/
+/app_common-config_libs/
+/crash-reports/
 win_event*.txt
+launcher_log.txt
+hs_err_pid-1.log
+/.architectury-transformer/*
+git_porter_config.json

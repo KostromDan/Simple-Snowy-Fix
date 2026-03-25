@@ -1,0 +1,98 @@
+plugins {
+	id "com.modrinth.minotaur" version "2.+"
+	id "net.darkhax.curseforgegradle" version "1.1.+"
+}
+
+apply plugin: 'idea'
+apply plugin: 'net.fabricmc.fabric-loom'
+
+dependencies {
+	implementation project(':common')
+
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+
+base {
+	archivesName = "simple_snowy_fix-${project.name}-26.1"
+}
+
+processResources {
+	def expandProps = [
+		"version"             : project.version,
+		"mod_id"              : project.mod_id,
+		"mod_name"            : project.mod_name,
+		"mod_description"     : project.mod_description,
+		"mod_author"          : project.mod_author,
+		"license"             : project.license,
+		"homepage_url"        : project.homepage_url,
+		"sources_url"         : project.sources_url,
+		"issues_url"          : project.issues_url,
+		"loader_version"      : project.loader_version,
+		"minecraft_version"   : project.minecraft_version,
+		"fabric_minecraft_version_range"   : project.fabric_minecraft_version_range,
+		"maven_group"         : project.maven_group,
+	]
+	inputs.properties expandProps
+
+	filesMatching("fabric.mod.json") {
+		expand expandProps
+	}
+}
+
+jar {
+	from project(':common').sourceSets.main.output
+}
+
+def parsedChangelog = file('../changelog.md').text
+
+if (System.getenv("MODRINTH_TOKEN") != null) {
+	modrinth {
+		group = "upload"
+		token = System.getenv("MODRINTH_TOKEN")
+		projectId = "ix1qq8Ux"
+		versionNumber = project.version
+		versionName = tasks.jar.archiveFile.get().asFile.name
+		versionType = release_type
+		changelog = parsedChangelog
+		uploadFile = tasks.jar
+		gameVersions = ["26.1-snapshot-11", "26.1-pre-1", "26.1-pre-2", "26.1-pre-3", "26.1-rc-1", "26.1-rc-2", "26.1-rc-3", "26.1"]
+		loaders = ["fabric", "quilt"]
+	}
+}
+
+if (System.getenv("CF_TOKEN") != null) {
+	tasks.register("publishCurseForge", net.darkhax.curseforgegradle.TaskPublishCurseForge) {
+		group = "upload"
+		apiToken = System.getenv("CF_TOKEN")
+
+		def mainFile = upload("1154099", tasks.jar)
+		mainFile.displayName = tasks.jar.archiveFile.get().asFile.name
+		mainFile.changelog = parsedChangelog
+		mainFile.changelogType = "markdown"
+		mainFile.releaseType = release_type
+
+		mainFile.addGameVersion("26.1")
+		mainFile.addModLoader("Fabric", "Quilt")
+	}
+}
+
+task publishUnified {
+	group = "upload"
+	if (System.getenv("MODRINTH_TOKEN") != null) dependsOn(tasks.modrinth)
+	if (System.getenv("CF_TOKEN") != null) dependsOn(tasks.publishCurseForge)
+}
+
+task publishUnifiedToLocal(type: Copy) {
+	group = "upload"
+	dependsOn(tasks.jar)
+	from(tasks.jar.archiveFile)
+	into("build/unified-local/project0")
+}
+
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
+}
