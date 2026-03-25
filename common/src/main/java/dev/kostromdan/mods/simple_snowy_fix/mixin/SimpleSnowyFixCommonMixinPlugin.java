@@ -37,13 +37,13 @@ public class SimpleSnowyFixCommonMixinPlugin implements IMixinConfigPlugin {
         List<String> mixins = new ArrayList<>();
         mixins.add("TreeFeatureMixin");
 
-        if (existsByResource(OH_THE_TREES_YOULL_GROW_CLASS)) {
-            mixins.add("TreeFromStructureNBTFeatureMixin");
-        }
-
-        if (existsByResource(REGIONS_UNEXPLORED_CLASS)) {
-            mixins.add("RUTreeFeatureMixin");
-        }
+//        if (existsByResource(OH_THE_TREES_YOULL_GROW_CLASS)) {
+//            mixins.add("TreeFromStructureNBTFeatureMixin");
+//        }
+//
+//        if (existsByResource(REGIONS_UNEXPLORED_CLASS)) {
+//            mixins.add("RUTreeFeatureMixin");
+//        }
 
         return mixins;
     }

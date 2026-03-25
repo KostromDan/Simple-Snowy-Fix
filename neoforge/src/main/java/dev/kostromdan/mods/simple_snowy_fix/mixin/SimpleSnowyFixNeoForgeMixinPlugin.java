@@ -39,9 +39,9 @@ public class SimpleSnowyFixNeoForgeMixinPlugin implements IMixinConfigPlugin {
         mixins.addAll(SimpleSnowyFixCommonMixinPlugin.getCommonMixins());
 
         // Check if Dynamic Trees is loaded
-        if (LoadingModList.get().getModFileById(DYNAMIC_TREES_MOD_ID)!=null) {
-            mixins.add("JoCodeMixin");
-        }
+//        if (LoadingModList.get().getModFileById(DYNAMIC_TREES_MOD_ID)!=null) {
+//            mixins.add("JoCodeMixin");
+//        }
 
         return mixins;
     }
