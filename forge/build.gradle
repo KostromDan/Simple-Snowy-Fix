@@ -67,7 +67,7 @@ if (System.getenv("MODRINTH_TOKEN") != null) {
     modrinth {
         group = "upload"
         token = System.getenv("MODRINTH_TOKEN")
-        projectId = "ix1qq8Ux"
+        projectId = "3WP3HZRG"
         versionNumber = project.version
         versionName = tasks.jar.archiveFile.get().asFile.name
         versionType = release_type
@@ -83,7 +83,7 @@ if (System.getenv("CF_TOKEN") != null) {
         group = "upload"
         apiToken = System.getenv("CF_TOKEN")
 
-        def mainFile = upload("1154099", tasks.jar)
+        def mainFile = upload("1211256", tasks.jar)
         mainFile.displayName = tasks.jar.archiveFile.get().asFile.name
         mainFile.changelog = parsedChangelog
         mainFile.changelogType = "markdown"

@@ -1,3 +1,7 @@
+2.2.0:
+
+- 26.1 port.
+
 2.1.9:
 
 - Fixed crash in case of datapacks generating super large trees and Serene Seasons involved.
