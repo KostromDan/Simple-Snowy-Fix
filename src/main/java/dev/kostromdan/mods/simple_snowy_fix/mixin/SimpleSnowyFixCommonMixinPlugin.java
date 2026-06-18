@@ -10,7 +10,6 @@ import java.util.Set;
 
 public class SimpleSnowyFixCommonMixinPlugin implements IMixinConfigPlugin {
     private static final String OH_THE_TREES_YOULL_GROW_CLASS = "dev.corgitaco.ohthetreesyoullgrow.world.level.levelgen.feature.TreeFromStructureNBTFeature";
-    private static final String REGIONS_UNEXPLORED_CLASS = "net.regions_unexplored.world.level.feature.configuration.RuTreeConfiguration";
 
     @Override
     public void onLoad(String mixinPackage) {
@@ -39,10 +38,6 @@ public class SimpleSnowyFixCommonMixinPlugin implements IMixinConfigPlugin {
 
         if (existsByResource(OH_THE_TREES_YOULL_GROW_CLASS)) {
             mixins.add("TreeFromStructureNBTFeatureMixin");
-        }
-
-        if (existsByResource(REGIONS_UNEXPLORED_CLASS)) {
-            mixins.add("RUTreeFeatureMixin");
         }
 
         return mixins;

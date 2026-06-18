@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 public class SimpleSnowyFixFabricMixinPlugin implements IMixinConfigPlugin {
+    private static final String REGIONS_UNEXPLORED_FABRIC_CLASS = "net.regions_unexplored.world.level.feature.configuration.RUTreeConfiguration";
+
     @Override
     public void onLoad(String mixinPackage) {
         // No initialization needed
@@ -34,6 +36,20 @@ public class SimpleSnowyFixFabricMixinPlugin implements IMixinConfigPlugin {
         List<String> mixins = new ArrayList<>();
 
         mixins.addAll(SimpleSnowyFixCommonMixinPlugin.getCommonMixins());
+
+        if (SimpleSnowyFixCommonMixinPlugin.existsByResource(REGIONS_UNEXPLORED_FABRIC_CLASS)) {
+            mixins.add("RUTreeFeatureMixin");
+            mixins.add("RUAspenTreeFeatureMixin");
+            mixins.add("RUCustomLeavesFeatureMixin");
+            mixins.add("RUSakuraTreeFeatureMixin");
+            mixins.add("RUKapokTreeFeatureMixin");
+            mixins.add("RUSmallJoshuaTreeFeatureMixin");
+            mixins.add("RUJoshuaTreeFeatureMixin");
+            mixins.add("RUBranchLeavesFeatureMixin");
+            mixins.add("RUBaobabBranchLeavesFeatureMixin");
+            mixins.add("RUSmallOakBranchLeavesFeatureMixin");
+            mixins.add("RUBrimWillowFeatureMixin");
+        }
 
         return mixins;
     }

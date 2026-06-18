@@ -95,10 +95,13 @@ dependencies {
     // we need this in main where it isn't by default
     implementation "org.spongepowered:mixin:0.8.5-SNAPSHOT"
     implementation "org.ow2.asm:asm-tree:9.8"
-    modImplementation "curse.maven:oh-the-trees-youll-grow-962544:6294236"
-    modImplementation "curse.maven:regions-unexplored-659110:6273884"
+    modImplementation "curse.maven:oh-the-trees-youll-grow-962544:8096180"
 
-    neoforgeCompileOnly "curse.maven:dynamictrees-252818:6611182"
+    neoforgeCompileOnly "curse.maven:dynamictrees-252818:8227322"
+
+    lexforgeCompileOnly "curse.maven:regions-unexplored-659110:6273889"
+    neoforgeCompileOnly "curse.maven:regions-unexplored-659110:8226385"
+    fabricCompileOnly "curse.maven:regions-unexplored-659110:8226388"
 }
 
 jar {
