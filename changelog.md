@@ -1,3 +1,13 @@
+2.2.1:
+
+- 1.21.1 NeoForge and Fabric: Fixed changes in regions unexplored.
+- 26.1: Re-added mods compatibility logic for mods which have been ported to 26.1.
+- Ported mod to 26.2.
+
+2.2.0:
+
+- 26.1 port.
+
 2.1.9:
 
 - Fixed crash in case of datapacks generating super large trees and Serene Seasons involved.
